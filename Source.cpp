@@ -68,7 +68,7 @@ typedef vector<vull> vvull;
 #define vb2d(NAME, STRINGS, COLUMNS, SYMBOLS) vvb NAME(STRINGS, vb(COLUMNS, SYMBOLS))
 #define fori(START, END) for(ll i = START; i < END; i++)
 #define forj(START, END) for(ll j = START; j < END; j++)
-#define ford(START, END) for(ll i = START; i > END; i--)
+#define fordij(START, END) for(ll dij = START; dij > END; dij--)
 #define endl '\n'
 
 const long double PI = 3.1415926535897932384626433832;
@@ -81,6 +81,12 @@ ll gcd(ll a, ll b) {
 	return a;
 }
 
+bool sortbysec(const pair<int, int>& a,
+	const pair<int, int>& b)
+{
+	return (a.second < b.second);
+}
+
 //#define GET_DURATION_TIME
 //#define DEBUG
 
@@ -91,41 +97,10 @@ int main() {
 #ifdef GET_DURATION_TIME
 	auto get_duration_time_start = chrono::high_resolution_clock::now();
 #endif // GET_DURATION_TIME	
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
+	//freopen("input.txt", "r", stdin);
+	//freopen("output.txt", "w", stdout);
 //--------------------------------------[S T A R T]--------------------------------------
-	string mainS;
-	vector<string> arr;
-	string inpBuffer;
-	while (1) {
-		cin >> inpBuffer;
-		if (inpBuffer == "stopitalready") {
-			break;
-		}
-		arr.push_back(inpBuffer);
-	}
-	set<string> result;
-	string buffer = "";
-	fori(0, arr.size()) {
-		int dotCounter = 0;
-		forj(0, arr[i].length()) {
-			if (arr[i][j] == '.') {
-				dotCounter++;
-			}
-		}
-		if (dotCounter == 3) {
-			forj(0, arr[i].length()) {
-				if (arr[i][j] == '.' || arr[i][j] == '1' || arr[i][j] == '2' || arr[i][j] == '3' || arr[i][j] == '4' || arr[i][j] == '5' || arr[i][j] == '6' || arr[i][j] == '7' || arr[i][j] == '8' || arr[i][j] == '9' || arr[i][j] == '0') {
-					buffer += arr[i][j];
-				}
-			}
-			result.insert(buffer);
-			buffer = "";
-		}
-	}
-	for (auto x : result) {
-		cout << x << endl;
-	}
+	cout << "Hello world";
 //----------------------------------------[E N D]----------------------------------------
 #ifdef GET_DURATION_TIME
 	auto get_duration_time_end = chrono::high_resolution_clock::now();
